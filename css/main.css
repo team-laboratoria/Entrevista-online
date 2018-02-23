@@ -6,20 +6,8 @@ header {
   font-family: 'Bitter', serif;
 }
 
-text-black {
-  color: #000000;
-}
-
-text-yellow {
-  color: #FFE521;
-}
-
-text-magenta {
-  color: #FF009E;
-}
-
-text-green {
-  color: #56F89A;
+.bg-yellow {
+  background-color: #FFE521;
 }
 
 .vh-100 {
@@ -36,4 +24,11 @@ text-green {
 
 .line-height {
   line-height: 1.6;
+}
+
+.hr-small {
+  border: none;
+  border-top: 0.2rem solid #FFE521; 
+  /* border-top: 0.2rem solid #FF009E; */
+  width: 4rem;
 }
