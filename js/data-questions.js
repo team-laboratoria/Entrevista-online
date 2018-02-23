@@ -198,10 +198,6 @@ nextQuestion.addEventListener('click', function () {
   }
 })
 
-<<<<<<< HEAD
-
-
-=======
 var mins = 00, segs, s, m;
 
 $('.uploadcare--widget__button_type_open').on('click', function () {
@@ -235,4 +231,3 @@ function minutos() {
   mins--;
   console.log('Tiempo!');
 }
->>>>>>> 86534b6dba41493e1b59381e31f152bab0db1754
