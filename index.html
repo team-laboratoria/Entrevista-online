@@ -10,15 +10,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body class="hero">
-    <main class="container d-flex align-items-center justify-content-center vh-100">
-      <div class="row">
-        <div class="col-sm-8 offset-sm-2">        
-          <h3 class="text-center text-dark">¡Bienvenida!</h3>
-          <h5 class="text-center text-dark mt-5 line-height">Mientras tú te encuentras en el proceso de completar cada etapa de nuestro proceso de selección, te pedimos el favor de responder a la siguiente entrevista online.</h5>
-          <p class="text-center text-secondary my-3 line-height">Este cuestionario ha sido diseñado para conocerte un poco mejor. A continuación, encontrarás unas preguntas a las cuales responderás con un video. Te pedimos el favor de responder la totalidad de las preguntas siendo completamente honesta.</p>
-          <div class="d-flex justify-content-center mt-5">
-            <a class="btn bg-yellow btn-lg text-dark font-weight-bold" href="views/question.html" role="button">Comenzar</a>
+  <body class="bg-light">
+    <main class="vh-100 d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3 bg-white">
+            <h1 class="principal-title-styles text-center my-3"><img src="assets/images/logo.png" alt=""></h1>
+            <form>
+              <div class="form-group">
+                <input id="email" class="form-control  bg-input text-white font-weight-300 w-100 " type="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input id="password" class="form-control  bg-input font-weight-300 " type="password" placeholder="Password">
+              </div>
+              <button type="button" id="btnSignUp" class="btn text-white btn-block btn-styles font-weight-300 ">Registrarte</button>
+            </form>
+            <div class="text-center text-white my-4 font-weight-bold">¿Tienes una cuenta?</div>
+            <!-- <form class="mb-2">
+              <div class="form-group">
+                <input id="email2" class="form-control  bg-input text-white font-weight-300 w-100 " type="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input id="password2" class="form-control  bg-input font-weight-300 " type="password" placeholder="Password">
+              </div>
+              <button type="button" id="btnLogin" class="btn text-white btn-block btn-styles font-weight-300 ">Inicia sesión</button>
+              <br>
+              <p class="text-white text-center">
+                <span class="span-left"></span> o
+                <span class="span-right"></span>
+              </p>
+              <br>
+              <button type="submit" id="" class="btn text-white btn-block btn-styles font-weight-300">
+                <i class="fab fa-google"></i> Inicia sesion con Google </button>
+            </form> -->
           </div>
         </div>
       </div>
