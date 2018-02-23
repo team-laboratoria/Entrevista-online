@@ -84,3 +84,8 @@ header {
 .uploadcare--widget_status_loaded {
   display: none;
 }
+
+.uploadcare--dialog__container {
+  align-items: center;
+  height: 78%;
+}
