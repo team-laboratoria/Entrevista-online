@@ -10,7 +10,7 @@ header {
   background-image: url('../assets/images/background.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; 
+  background-size: cover;
 }
 
 .bg-yellow {
@@ -35,7 +35,7 @@ header {
 
 .hr-small {
   border: none;
-  border-top: 0.2rem solid #FFE521; 
+  border-top: 0.2rem solid #FFE521;
   /* border-top: 0.2rem solid #FF009E; */
   width: 4rem;
 }
@@ -57,4 +57,9 @@ header {
 .counter-span {
   margin-right: 0.5em;
 }
-
+.uploadcare--widget__button_type_open {
+  background-color: #FFE521;
+  color: #343a40!important;
+  font-weight: bold;
+  border-radius: 4px;
+}
