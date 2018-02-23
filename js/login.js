@@ -90,7 +90,7 @@
         var sede = $('#sede').val();
         localStorage.setItem('name', name);
         localStorage.setItem('sede', sede);
-        window.location.href = 'welcome.html';
+        window.location.href = 'views/welcome.html';
       } else {
         console.log('usuario no logeado');
       }
