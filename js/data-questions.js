@@ -118,5 +118,21 @@ for (var i = 0 ; i< propertiesObjectArray.length; i++) {
 var lengthOfProperties = questions[propertiesObjectArray[i]].length;
  result.push(getQuestions(lengthOfProperties,questionsRequired[i],i));
 }
-
 console.log(result);
+var chosenQuestions = [];
+
+for (var i = 0; i < result.length;i++){
+
+  for(var y = 0; y < result[i].length;y++) {
+    
+    var x = result[i][y].Question;
+    var l = result[i][y].Time;
+    var userQuestions = chosenQuestions.push({
+      question: x, 
+      time: l
+    });
+  }
+}
+
+console.log(userQuestions);
+console.log(chosenQuestions);
