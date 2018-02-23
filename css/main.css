@@ -6,6 +6,13 @@ header {
   font-family: 'Bitter', serif;
 }
 
+.hero {
+  background-image: url('../assets/images/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+}
+
 .bg-yellow {
   background-color: #FFE521;
 }
@@ -32,3 +39,22 @@ header {
   /* border-top: 0.2rem solid #FF009E; */
   width: 4rem;
 }
+
+.progress-bar-container {
+  margin: 2em 0 1em;
+  width: 100%;
+}
+
+.progress-counter-container{
+  font-size: 0.8em;
+  float: right;
+}
+
+.user-progress-bar {
+  width: 0%;
+}
+
+.counter-span {
+  margin-right: 0.5em;
+}
+

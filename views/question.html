@@ -20,7 +20,7 @@
           <p class="text-center text-secondary my-3 line-height">¿Sabes si debes pagar a Laboratoria por la formación que recibirías en caso de ser aceptada?</p>
           <div class="d-flex justify-content-center mt-5">
             <a class="btn bg-yellow text-dark font-weight-bold" href="#" role="button">Grabar</a>
-            <a class="btn bg-yellow text-dark font-weight-bold ml-3" href="#" role="button">Terminar video</a>
+            <a class="btn bg-yellow text-dark font-weight-bold ml-3" id="progress-button" href="#" role="button">Terminar video</a>
           </div>
         </div>
       </div>
@@ -28,8 +28,11 @@
     <footer class="vh-10">
       <!-- Aquí va la barra de progreso -->
       <div class="container">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9 de 10</div>
+        <div class="progress progress-bar-container">
+          <div class="progress-bar user-progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="progress-counter-container">
+            <span class="counter-span" id="counter">0</span><span>de 8</span>
         </div>
       </div>
     </footer>
@@ -37,5 +40,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="../js/app.js"></script>
   </body>
 </html>
