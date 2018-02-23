@@ -197,9 +197,9 @@ nextQuestion.addEventListener('click', function () {
     })
   }
 })
+var mins = 00, segs, s, m;
 
 $(document).on('click', '.uploadcare--widget__button_type_open',function(event) {
-  var mins = 00, segs, s, m;
   console.log('a');
   console.log('click');
   $('#segundos').empty();
@@ -209,7 +209,7 @@ $(document).on('click', '.uploadcare--widget__button_type_open',function(event) 
   segs = time - 1;
   m = setInterval('segundos()', 1000);
 
-  return $('.uploadcare--tab__content').append(`<div>Tiempo restante: ${segs}</div>`);
+  return $('.uploadcare--tab__content').append(`<div>Tiempo restante: <span id="minutos">00:</span><span id ="segundos">00</span></div>`);
 
 });
   function segundos() {
