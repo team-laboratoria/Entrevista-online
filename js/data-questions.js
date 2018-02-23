@@ -92,8 +92,7 @@ function getLength() {
 
 for (var i = 0; i < propertiesObjectLength; i++) {
   // devuelve el array de cada propiedad : 
-  console.log(questions[propertiesObjectArray[i]]);
-
+  // console.log(questions[propertiesObjectArray[i]]);
 }
 
 
@@ -152,7 +151,7 @@ for (var i = 0; i < propertiesObjectArray.length; i++) {
   var lengthOfProperties = questions[propertiesObjectArray[i]].length;
   result.push(getQuestions(lengthOfProperties, questionsRequired[i], i));
 }
-console.log(result);
+// console.log(result);
 var chosenQuestions = [];
 
 for (var i = 0; i < result.length; i++) {
@@ -171,11 +170,8 @@ for (var i = 0; i < result.length; i++) {
 // Vista question: pregunta y tiempo
 
 var title = document.querySelector('.title-js');
-console.log(title);
 var counter = document.querySelector('.counter-js');
-console.log(counter);
 var displayQuestion = document.querySelector('.question-js');
-console.log(displayQuestion);
 
 var nextQuestion = document.querySelector('.next-question-js');
 
@@ -199,19 +195,21 @@ nextQuestion.addEventListener('click', function () {
 })
 var mins = 00, segs, s, m;
 
+// Cargar "Tiempo restante" estático en el modal
 $(document).on('click', '.uploadcare--widget__button_type_open',function(event) {
-  console.log('a');
-  console.log('click');
+  return $('.uploadcare--tab__content').append(`<div>Tiempo restante: <span id="minutos">00:</span><span id ="segundos">00</span></div>`);
+});
+
+// Para "Record a video"
+$(document).on('click', '.uploadcare--camera__button_type_start-record', function(e) {
+  e.preventDefault();
   $('#segundos').empty();
   var time = chosenQuestions[centinel].time;
   $('#segundos').text(time);
-  // Corre tiempo
   segs = time - 1;
   m = setInterval('segundos()', 1000);
-
-  return $('.uploadcare--tab__content').append(`<div>Tiempo restante: <span id="minutos">00:</span><span id ="segundos">00</span></div>`);
-
 });
+
   function segundos() {
     $('#segundos').html(segs);
     if (segs == 0) {
@@ -228,5 +226,4 @@ $(document).on('click', '.uploadcare--widget__button_type_open',function(event) 
       var ds = clearInterval(s);
     }
     mins--;
-    console.log('Tiempo!');
   }
