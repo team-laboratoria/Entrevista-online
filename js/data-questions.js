@@ -119,7 +119,7 @@ function getQuestions(arrayIndex, totalQuestions, group) {
 
   }
   for (var i = 0; i < myArray.length; i++) {
-    preguntasEscogidasPrueba.push(questions[propertiesObjectArray[group]][myArray[i]].Question);
+    preguntasEscogidasPrueba.push(questions[propertiesObjectArray[group]][myArray[i]]);
   }
 
   return preguntasEscogidasPrueba.slice(0, totalQuestions);
