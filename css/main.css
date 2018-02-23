@@ -13,6 +13,10 @@ header {
   background-size: cover;
 }
 
+.text-black {
+  color: #000000;
+}
+
 .bg-yellow {
   background-color: #FFE521;
 }
