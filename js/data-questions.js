@@ -198,13 +198,9 @@ nextQuestion.addEventListener('click', function () {
   }
 })
 
-<<<<<<< HEAD
-
-
-=======
-var mins = 00, segs, s, m;
-
-$('.uploadcare--widget__button_type_open').on('click', function () {
+$(document).on('click', '.uploadcare--widget__button_type_open',function(event) {
+  var mins = 00, segs, s, m;
+  console.log('a');
   console.log('click');
   $('#segundos').empty();
   var time = chosenQuestions[centinel].time;
@@ -213,26 +209,24 @@ $('.uploadcare--widget__button_type_open').on('click', function () {
   segs = time - 1;
   m = setInterval('segundos()', 1000);
 
-  // Probando tiempo en modal
-  $('.uploadcare--tab__content').append('<div>Tiempo restante: </div>')
+  return $('.uploadcare--tab__content').append(`<div>Tiempo restante: ${segs}</div>`);
+
 });
-
-function segundos() {
-  $('#segundos').html(segs);
-  if (segs == 0) {
-    var dm = clearInterval(m);
-    s = setInterval('minutos()', 1000);
+  function segundos() {
+    $('#segundos').html(segs);
+    if (segs == 0) {
+      var dm = clearInterval(m);
+      s = setInterval('minutos()', 1000);
+    }
+    segs--;
   }
-  segs--;
-}
-
-function minutos() {
-  $('#minutos').html(mins);
-  if (mins == 0) {
-    location.reload();
-    var ds = clearInterval(s);
+  
+  function minutos() {
+    $('#minutos').html(mins);
+    if (mins == 0) {
+      location.reload();
+      var ds = clearInterval(s);
+    }
+    mins--;
+    console.log('Tiempo!');
   }
-  mins--;
-  console.log('Tiempo!');
-}
->>>>>>> 86534b6dba41493e1b59381e31f152bab0db1754
