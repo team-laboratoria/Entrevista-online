@@ -21,6 +21,10 @@ header {
   background-color: #FF009E;
 }
 
+.bg-green {
+  background-color: #56F89A;
+}
+
 .vh-100 {
   height: 100vh;
 }
@@ -80,4 +84,3 @@ header {
 .uploadcare--widget_status_loaded {
   display: none;
 }
-

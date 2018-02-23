@@ -30,14 +30,14 @@
               <div class="form-group">
                 <input id="password" class="form-control" type="password" placeholder="Contraseña">
               </div>
-              <button type="button" id="btnSignUp" class="btn text-white btn-block bg-magenta font-weight-300 mb-3">Registrarte</button>
+              <button type="button" id="btnSignUp" class="btn text-white btn-block bg-magenta mb-3">Registrarte</button>
               <!-- <p class="text-center"><small>Al registrarte, aceptas nuestras Condiciones y la Política de privacidad.</small></p> -->
             </form>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col-10 offset-1 col-md-6 offset-md-3 bg-white py-4">
-            <div class="text-center">¿Tienes una cuenta? <a id="signIn" href="#" data-toggle="modal" data-target="#exampleModalCenter"> Entrar</a></div>
+            <div class="text-center">¿Tienes una cuenta? <a id="signIn" href="#"> Entrar</a></div>
           </div>
         </div>
       </div>
@@ -53,8 +53,35 @@
               <div class="form-group">
                 <input id="password" class="form-control" type="password" placeholder="Contraseña">
               </div>
-              <button type="button" id="btnSignUp" class="btn text-white btn-block bg-magenta font-weight-300 mb-3">Entrar</button>
+              <a id="btnSignUp" class="btn text-dark btn-block bg-green mb-3" href="views/welcome.html" role="button">Entrar</a>
             </form>
+            <div class="text-center mb-3">
+              <a href="#" data-toggle="modal" data-target="#exampleModalCenter">¿Has olvidado tu contraseña?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Recuperar contraseña / modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title font-weight-bold" id="exampleModalLongTitle">Restablecer contraseña</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Ingrese su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña.</p>
+              <form>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="enterEmail" aria-describedby="emailHelp" placeholder="Correo electrónico">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="resetPassword" class="btn bg-green">Enviar</button>
+            </div>
           </div>
         </div>
       </div>
