@@ -17,6 +17,10 @@ header {
   background-color: #FFE521;
 }
 
+.bg-magenta {
+  background-color: #FF009E;
+}
+
 .vh-100 {
   height: 100vh;
 }

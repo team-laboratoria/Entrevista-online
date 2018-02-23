@@ -12,11 +12,12 @@
   </head>
   <body class="bg-light">
     <main class="vh-100 d-flex align-items-center">
-      <div class="container">
+      <!-- Registrarse -->
+      <div id="login" class="container">
         <div class="row">
-          <div class="col-md-6 offset-md-3 bg-white">
+          <div class="col-10 offset-1 col-md-6 offset-md-3 bg-white">
             <h1 class="principal-title-styles text-center my-3"><img src="assets/images/logo.png" alt=""></h1>
-            <form class="my-5">
+            <form class="mt-5">
               <div class="form-group">
                 <input id="name" class="form-control" type="text" placeholder="Nombre y Apellido">
               </div>
@@ -29,27 +30,31 @@
               <div class="form-group">
                 <input id="password" class="form-control" type="password" placeholder="Contraseña">
               </div>
-              <button type="button" id="btnSignUp" class="btn text-white btn-block btn-styles font-weight-300 ">Registrarte</button>
-              <p class="text-center"><small>Al registrarte, aceptas nuestras Condiciones y la Política de privacidad.</small></p>
+              <button type="button" id="btnSignUp" class="btn text-white btn-block bg-magenta font-weight-300 mb-3">Registrarte</button>
+              <!-- <p class="text-center"><small>Al registrarte, aceptas nuestras Condiciones y la Política de privacidad.</small></p> -->
             </form>
-            <div class="text-center text-white my-4 font-weight-bold">¿Tienes una cuenta?</div>
-            <!-- <form class="mb-2">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-10 offset-1 col-md-6 offset-md-3 bg-white py-4">
+            <div class="text-center">¿Tienes una cuenta? <a id="signIn" href="#" data-toggle="modal" data-target="#exampleModalCenter"> Entrar</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- Iniciar sesión -->
+      <div id="signInUp" class="container">
+        <div class="row">
+          <div class="col-10 offset-1 col-md-6 offset-md-3 bg-white">
+            <h1 class="principal-title-styles text-center my-3"><img src="assets/images/logo.png" alt=""></h1>
+            <form class="mt-5">
               <div class="form-group">
-                <input id="email2" class="form-control text-white font-weight-300 w-100 " type="email" placeholder="Email">
+                <input id="email" class="form-control" type="email" placeholder="Correo electrónico">
               </div>
               <div class="form-group">
-                <input id="password2" class="form-control font-weight-300 " type="password" placeholder="Password">
+                <input id="password" class="form-control" type="password" placeholder="Contraseña">
               </div>
-              <button type="button" id="btnLogin" class="btn text-white btn-block btn-styles font-weight-300 ">Inicia sesión</button>
-              <br>
-              <p class="text-white text-center">
-                <span class="span-left"></span> o
-                <span class="span-right"></span>
-              </p>
-              <br>
-              <button type="submit" id="" class="btn text-white btn-block btn-styles font-weight-300">
-                <i class="fab fa-google"></i> Inicia sesion con Google </button>
-            </form> -->
+              <button type="button" id="btnSignUp" class="btn text-white btn-block bg-magenta font-weight-300 mb-3">Entrar</button>
+            </form>
           </div>
         </div>
       </div>
@@ -58,5 +63,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
