@@ -7,11 +7,7 @@ header {
 }
 
 .hero {
-<<<<<<< HEAD
-  background-image: url('../assets/images/background.PNG');
-=======
   background-image: url('../assets/images/fondo-principal.png');
->>>>>>> 86534b6dba41493e1b59381e31f152bab0db1754
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
