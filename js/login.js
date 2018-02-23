@@ -8,17 +8,6 @@
   };
   firebase.initializeApp(config);
 
-  // autenticando al usuario con google
-  // var provider = new firebase.auth.GoogleAuthProvider();
-  // $('#button-google').on('click', function() {
-  //   firebase.auth().signInWithPopup(provider).then(function(result) {
-  //     // The signed-in user info.
-  //     var user = result.user;
-  //     console.log(user);
-  //     // ...
-  //   });
-  // });
-
   var opEmail = false;
   var opPassword = false;
   var opname = false;
@@ -101,23 +90,10 @@
         var sede = $('#sede').val();
         localStorage.setItem('name', name);
         localStorage.setItem('sede', sede);
-        window.location.href = 'views/welcome.html';
+        window.location.href = 'welcome.html';
       } else {
         console.log('usuario no logeado');
       }
     });
   };
   observer()
-
-  $('#logout').on('click', function(event) {
-    event.preventDefault();
-    firebase.auth().signOut().then(function() {
-      // Sign-out successful.
-      console.log('SAliste de sesion');
-      window.location.href = '../index.html';
-    }).catch(function(error) {
-      // An error happened.
-      console.log(error);
-      
-    });
-  });

@@ -81,11 +81,17 @@ $(document).ready(function() {
       });
     };
   });
-  // dando funcionalidad al boton de log out
-  $('#out').on('click', function() {
+
+  // Funcionalidad cerrar sesión
+  $('#logout').on('click', function(event) {
+    event.preventDefault();
     firebase.auth().signOut().then(function() {
-      console.log('saliste');
+      // Sign-out successful.
+      console.log('Saliste de sesion');
       window.location.href = '../index.html';
+    }).catch(function(error) {
+      // An error happened.
+      console.log(error);      
     });
   });
 });
