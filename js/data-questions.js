@@ -168,15 +168,7 @@ for (var i = 0; i < result.length; i++) {
   }
 }
 
-// console.log(userQuestions);
-console.log(chosenQuestions);
-
-
-
-// mostrando los resultados en pantalla :
-
-
-// obteniendo los elementos del dom : 
+// Vista question: pregunta y tiempo
 
 var title = document.querySelector('.title-js');
 console.log(title);
@@ -187,26 +179,60 @@ console.log(displayQuestion);
 
 var nextQuestion = document.querySelector('.next-question-js');
 
-console.log(nextQuestion)
-
 var centinel = 0;
 
-  title.textContent = 'pregunta '+ (centinel + 1) ;
-  counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
-  displayQuestion.textContent =  chosenQuestions[centinel].question;
+title.textContent = 'Pregunta ' + (centinel + 1);
+counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
+displayQuestion.textContent = chosenQuestions[centinel].question;
 
 nextQuestion.addEventListener('click', function () {
   centinel += 1;
-  title.textContent = 'pregunta '+ (centinel+1);
+  title.textContent = 'Pregunta ' + (centinel + 1);
   counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
-  displayQuestion.textContent =  chosenQuestions[centinel].question;
-  if(centinel === 7 ) {
+  displayQuestion.textContent = chosenQuestions[centinel].question;
+  if (centinel === 7) {
     nextQuestion.addEventListener('click', function () {
-      title.textContent = 'pregunta '+ (centinel);
-    window.location.href = 'finish.html';
+      title.textContent = 'Pregunta ' + (centinel);
+      window.location.href = 'finish.html';
     })
   }
 })
 
+<<<<<<< HEAD
 
 
+=======
+var mins = 00, segs, s, m;
+
+$('.uploadcare--widget__button_type_open').on('click', function () {
+  console.log('click');
+  $('#segundos').empty();
+  var time = chosenQuestions[centinel].time;
+  $('#segundos').text(time);
+  // Corre tiempo
+  segs = time - 1;
+  m = setInterval('segundos()', 1000);
+
+  // Probando tiempo en modal
+  $('.uploadcare--tab__content').append('<div>Tiempo restante: </div>')
+});
+
+function segundos() {
+  $('#segundos').html(segs);
+  if (segs == 0) {
+    var dm = clearInterval(m);
+    s = setInterval('minutos()', 1000);
+  }
+  segs--;
+}
+
+function minutos() {
+  $('#minutos').html(mins);
+  if (mins == 0) {
+    location.reload();
+    var ds = clearInterval(s);
+  }
+  mins--;
+  console.log('Tiempo!');
+}
+>>>>>>> 86534b6dba41493e1b59381e31f152bab0db1754

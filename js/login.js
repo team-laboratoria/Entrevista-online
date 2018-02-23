@@ -1,9 +1,3 @@
-$(document).ready(function() {
-  $('#signInUp').hide();
-  $('#signIn').on('click', function() {
-    $('#login').hide();
-    $('#signInUp').show();
-  });
   var config = {
     apiKey: 'AIzaSyBCVgvNV0gko5O9rNFgQv8aXrtZOF2gzeM',
     authDomain: 'fir-p-a292a.firebaseapp.com',
@@ -15,15 +9,15 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   // autenticando al usuario con google
-  var provider = new firebase.auth.GoogleAuthProvider();
-  $('#button-google').on('click', function() {
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      // The signed-in user info.
-      var user = result.user;
-      console.log(user);
-      // ...
-    });
-  });
+  // var provider = new firebase.auth.GoogleAuthProvider();
+  // $('#button-google').on('click', function() {
+  //   firebase.auth().signInWithPopup(provider).then(function(result) {
+  //     // The signed-in user info.
+  //     var user = result.user;
+  //     console.log(user);
+  //     // ...
+  //   });
+  // });
 
   var opEmail = false;
   var opPassword = false;
@@ -32,12 +26,11 @@ $(document).ready(function() {
 
   function activeFinalButton() {
     if (opEmail === true && opPassword === true && opname === true && opsede === true) {
-      $('#login-button').attr('disabled', false);
+      $('#btnSignUp1').attr('disabled', false);
       $('#btnSignUp').attr('disabled', false);
     } else {
-      $('#login-button').attr('disabled', true);
+      $('#btnSignUp1').attr('disabled', true);
       $('#btnSignUp').attr('disabled', true);
-
     }
   }
 
@@ -49,11 +42,6 @@ $(document).ready(function() {
     }
     activeFinalButton();
   });
-
-  // $('#sede').on('change', function(event) {
-  //     opsede = true;
-  //   activeFinalButton();
-  // });
 
   $('#email').on('input', function(event) {
     var EMAILESTRUC = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
@@ -83,38 +71,53 @@ $(document).ready(function() {
       var errorCode = error.code;
       var errorMessage = error.message;
       if (errorCode) {
-        $('#inputPassword').val('');
+        $('#password1').val('');
         alert(errorMessage);
       }
     });
   });
-  $('#login-button').on('click', function(event) {
+
+  // realizando acciones cuando el usuario este autenticado
+  $('#btnSignUp1').on('click', function(event) {
     // event.preventDefault();
-    var emailText = $('#inputEmail').val();
-    var passwordText = $('#inputPassword').val();
+    var emailText = $('#email1').val();
+    var passwordText = $('#password1').val();
     firebase.auth().signInWithEmailAndPassword(emailText, passwordText).catch(function(error) {
     // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       if (errorCode) {
-        $('#inputPassword').val('');
+        $('#password1').val('');
         alert(errorMessage);
       }
     });
   });
+  
+  function observer() { 
+    firebase.auth().onAuthStateChanged(function(user) {
+      // si el usuario esta activo
+      if (user) {
+        var name = $('#name').val();
+        var sede = $('#sede').val();
+        localStorage.setItem('name', name);
+        localStorage.setItem('sede', sede);
+        window.location.href = 'views/welcome.html';
+      } else {
+        console.log('usuario no logeado');
+      }
+    });
+  };
+  observer()
 
-
-  // realizando acciones cuando el usuario este autenticado
-  firebase.auth().onAuthStateChanged(function(user) {
-    // si el usuario esta activo
-    if (user) {
-      var name = $('#name').val();
-      var sede = $('#sede').val();
-      localStorage.setItem('name', name);
-      localStorage.setItem('sede', sede);
-      window.location.href = 'views/welcome.html';
-    } else {
-      console.log('usuario no logeado');
-    }
+  $('#logout').on('click', function(event) {
+    event.preventDefault();
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      console.log('SAliste de sesion');
+      window.location.href = '../index.html';
+    }).catch(function(error) {
+      // An error happened.
+      console.log(error);
+      
+    });
   });
-});
