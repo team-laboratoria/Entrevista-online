@@ -14,13 +14,13 @@
     <main class="container d-flex align-items-center justify-content-center vh-90">
       <div class="row">
         <div class="col-sm-8 offset-sm-2">
-          <h5 class="text-center font-weight-bold text-dark mt-5 mb-0 line-height">Pregunta 1</h5>
+          <h5 class="text-center font-weight-bold text-dark mt-5 mb-0 line-height title-js">Pregunta 1</h5>
           <hr class="hr-small mt-0">
-          <p class="text-center"><small>Tiempo estimado: 30 s</small></p>
-          <p class="text-center text-secondary my-3 line-height">¿Sabes si debes pagar a Laboratoria por la formación que recibirías en caso de ser aceptada?</p>
+          <p class="text-center"><small class="counter-js">Tiempo estimado: 30 s</small></p>
+          <p class="text-center text-secondary my-3 line-height question-js">¿Sabes si debes pagar a Laboratoria por la formación que recibirías en caso de ser aceptada?</p>
           <div class="d-flex justify-content-center mt-5">
             <input  id="input" type="hidden" role="uploadcare-uploader" name="content" data-crop="disabled" data-multiple="false"/>
-            <a class="btn bg-yellow text-dark font-weight-bold ml-3" id="progress-button" href="#" role="button">Siguiente</a>
+            <a class="btn bg-yellow text-dark font-weight-bold ml-3 next-question-js" id="progress-button" href="#" role="button">Siguiente</a>
           </div>
         </div>
       </div>
@@ -37,6 +37,7 @@
       </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script>
       UPLOADCARE_LOCALE = "es";
       UPLOADCARE_TABS = "camera";
