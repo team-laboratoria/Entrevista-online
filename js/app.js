@@ -23,6 +23,9 @@ $(document).ready(function() {
       var $newNumberOfQuestionsAnswered = $numberOfQuestionsAnswered + $plusOne;
       $counter.text($newNumberOfQuestionsAnswered);
      }
+     if ($numberOfQuestionsAnswered === 6) {
+      $progressBar.css('width', '99%');
+     }
      return $newProgress
    });
 });

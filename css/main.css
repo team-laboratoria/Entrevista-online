@@ -73,7 +73,7 @@ header {
   border-radius: 4px;
 }
 
-.uploadcare--panel__footer, .uploadcare--preview__back, .uploadcare--camera__button_type_capture, .uploadcare--file__remove {
+.uploadcare--panel__footer, .uploadcare--preview__back, .uploadcare--camera__button_type_capture, .uploadcare--file__remove, .uploadcare--camera__button_type_cancel-record {
   display: none;
 }
 
