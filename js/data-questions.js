@@ -191,18 +191,18 @@ console.log(nextQuestion)
 
 var centinel = 0;
 
-  title.textContent = 'pregunta '+ (centinel + 1) ;
+  title.textContent = 'Pregunta '+ (centinel + 1) ;
   counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
   displayQuestion.textContent =  chosenQuestions[centinel].question;
 
 nextQuestion.addEventListener('click', function () {
   centinel += 1;
-  title.textContent = 'pregunta '+ (centinel+1);
+  title.textContent = 'Pregunta '+ (centinel+1);
   counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
   displayQuestion.textContent =  chosenQuestions[centinel].question;
   if(centinel === 7 ) {
     nextQuestion.addEventListener('click', function () {
-      title.textContent = 'pregunta '+ (centinel);
+      title.textContent = 'Pregunta '+ (centinel);
     window.location.href = 'finish.html';
     })
   }
