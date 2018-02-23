@@ -1,0 +1,31 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  font-family: 'Bitter', serif;
+}
+
+text-black {
+  color: #000000;
+}
+
+text-yellow {
+  color: #FFE521;
+}
+
+text-magenta {
+  color: #FF009E;
+}
+
+text-green {
+  color: #56F89A;
+}
+
+.h-vh {
+  height: 100vh;
+}
+
+.line-height {
+  line-height: 1.6;
+}
