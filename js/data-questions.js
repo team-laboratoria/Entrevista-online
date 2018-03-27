@@ -114,9 +114,6 @@ var displayQuestion = document.querySelector('.question-js');
 var nextQuestion = document.querySelector('.next-question-js');
 
 var centinel = 0;
-title.textContent = 'Pregunta ' + (centinel + 1);
-counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
-displayQuestion.textContent = chosenQuestions[centinel].question;
 
 nextQuestion.addEventListener('click', function () {
   centinel += 1;
