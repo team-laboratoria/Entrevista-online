@@ -1,10 +1,10 @@
 var config = {
-  apiKey: "AIzaSyA9alToekwWcV6oNxMMrDbMdAAn__NtWE8",
-  authDomain: "entrevista-lab.firebaseapp.com",
-  databaseURL: "https://entrevista-lab.firebaseio.com",
-  projectId: "entrevista-lab",
-  storageBucket: "entrevista-lab.appspot.com",
-  messagingSenderId: "374384995501"
+  apiKey: "AIzaSyBCVgvNV0gko5O9rNFgQv8aXrtZOF2gzeM",
+  authDomain: "fir-p-a292a.firebaseapp.com",
+  databaseURL: "https://fir-p-a292a.firebaseio.com",
+  projectId: "fir-p-a292a",
+  storageBucket: "fir-p-a292a.appspot.com",
+  messagingSenderId: "215671637058"
 };
 firebase.initializeApp(config);
 
@@ -96,4 +96,15 @@ firebase.initializeApp(config);
       }
     });
   };
-  observer()
+  observer();
+
+  
+
+var restPassword = function() {
+  var auth = firebase.auth()
+  var resetEmail = $('#enterEmail').val();
+  auth.sendPasswordResetEmail(resetEmail)
+    .then(function() {
+      alert('Mensaje enviado!!');
+    })
+}

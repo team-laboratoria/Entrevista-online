@@ -108,3 +108,4 @@ function fbLogin() {
     .then(function (result) {});
 
 }
+
