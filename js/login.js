@@ -12,25 +12,27 @@
   var opPassword = false;
   var opname = false;
   var opsede = true;
+  
+  $('#email1').focus();
 
   function activeFinalButton() {
-    if (opEmail === true && opPassword === true && opname === true && opsede === true) {
+    if (opEmail && opPassword && opname && opsede) {
       $('#btnSignUp1').attr('disabled', false);
-      $('#btnSignUp').attr('disabled', false);
+      // $('#btnSignUp').attr('disabled', false);
     } else {
       $('#btnSignUp1').attr('disabled', true);
-      $('#btnSignUp').attr('disabled', true);
+      // $('#btnSignUp').attr('disabled', true);
     }
   }
 
-  $('#name').on('input', function(event) {
-    if ($(this).val().length >= 5) {
-      opname = true;
-    } else {
-      opname = false;
-    }
-    activeFinalButton();
-  });
+  // $('#name').on('input', function(event) {
+  //   if ($(this).val().length >= 5) {
+  //     opname = true;
+  //   } else {
+  //     opname = false;
+  //   }
+  //   activeFinalButton();
+  // });
 
   $('#email').on('input', function(event) {
     var EMAILESTRUC = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
