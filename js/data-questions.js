@@ -72,17 +72,19 @@ var questions = {
   ]
 }
 
-
 const numQuestionsRequired = [3, 2, 3]; // Preguntas requeridas por grupo
 let arrAllQuestions = []; // todas las preguntas seleccionadas por grupo
+let chosenQuestions = []; // Todas las preguntas por alumno
 
 Object.keys(questions).forEach((key, index) => {
   const group = questions[key];
-  arrAllQuestions.push(shuffle(group, numQuestionsRequired[index]));
+  let orderRandomQuestions = shuffle(group);
+  let questionsSelectedGroup = orderRandomQuestions.slice(0, numQuestionsRequired[index]);
+  questionsSelectedUser(questionsSelectedGroup)
 });
 
-console.log(arrAllQuestions);
-function shuffle(array, totalQuestions) {
+// Desordena las preguntas
+function shuffle(array) {
   var currentIndex = array.length,
     temporaryValue, randomIndex;
   while (0 !== currentIndex) {
@@ -92,33 +94,27 @@ function shuffle(array, totalQuestions) {
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
-  return array.slice(0, totalQuestions)
+  return array;
 }
 
-var chosenQuestions = [];
-
-for (var i = 0; i < arrAllQuestions.length; i++) {
-  for (var y = 0; y < arrAllQuestions[i].length; y++) {
-    var x = arrAllQuestions[i][y].Question;
-    var l = arrAllQuestions[i][y].Time;
-    var userQuestions = chosenQuestions.push({
-      question: x,
-      time: l
+// Todas las preguntas seleccionadas al usuario
+function questionsSelectedUser(questionsSelectedGroup) {
+  questionsSelectedGroup.forEach(function (question) {
+    const nameQuestion = question.Question;
+    const responseTime = question.Time;
+    chosenQuestions.push({
+      question: nameQuestion,
+      time: responseTime
     });
-  }
+  });
 }
 
-console.log(chosenQuestions); // array con las 8 preguntas;
-
-// Vista question: pregunta y tiempo
 var title = document.querySelector('.title-js');
 var counter = document.querySelector('.counter-js');
 var displayQuestion = document.querySelector('.question-js');
-
 var nextQuestion = document.querySelector('.next-question-js');
 
 var centinel = 0;
-
 title.textContent = 'Pregunta ' + (centinel + 1);
 counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
 displayQuestion.textContent = chosenQuestions[centinel].question;
