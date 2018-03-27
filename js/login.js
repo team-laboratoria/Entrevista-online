@@ -79,13 +79,11 @@ observer();
 $('#btn-google').click(googleLogin);
 
 function googleLogin() {
-  var provider = new firebase.auth.GoogleAuthProvider();
-
+  let provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
     .then(function (result) {
       writeData(result)
     });
-
 }
 
 function writeData(user) {
@@ -94,7 +92,6 @@ function writeData(user) {
     email: user.email,
     foto: user.photoURL
   };
-
   firebase.database().ref('users').child(user.uid)
     .set(usuario);
 }
@@ -102,10 +99,8 @@ function writeData(user) {
 $('#btn-fb').click(fbLogin);
 
 function fbLogin() {
-  var provider = new firebase.auth.FacebookAuthProvider();
-
+  let provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(provider)
-    .then(function (result) {});
-
+    .then(function(result){});
 }
 
