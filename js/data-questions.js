@@ -72,68 +72,33 @@ var questions = {
   ]
 }
 
+
 const numQuestionsRequired = [3, 2, 3]; // Preguntas requeridas por grupo
-let arrAllQuestions = []; // todas las preguntas
-Object.keys(questions).forEach((group, index) => {
-  const questionsGroup = getQuestions(questions[group].length, numQuestionsRequired[index], group);
-  arrAllQuestions.push(questionsGroup);
+let arrAllQuestions = []; // todas las preguntas seleccionadas por grupo
+
+Object.keys(questions).forEach((key, index) => {
+  const group = questions[key];
+  arrAllQuestions.push(shuffle(group, numQuestionsRequired[index]));
 });
 
-// Define la cantidad de numeros aleatorios.
-function getQuestions(arrayIndex, totalQuestions, group) {
-  // debugger
-  var cantidadNumeros = arrayIndex;
-  var preguntasEscogidasPrueba = [];
-  var myArray = []
-  while (myArray.length < cantidadNumeros) {
-    var numeroAleatorio = Math.ceil(Math.random() * cantidadNumeros - 1);
-    var existe = false;
-    for (var i = 0; i < myArray.length; i++) {
-      if (myArray[i] == numeroAleatorio) {
-        existe = true;
-        break;
-      }
-    }
-    if (!existe) {
-      myArray[myArray.length] = numeroAleatorio;
-    }
-
+console.log(arrAllQuestions);
+function shuffle(array, totalQuestions) {
+  var currentIndex = array.length,
+    temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
-  for (var i = 0; i < myArray.length; i++) {
-    preguntasEscogidasPrueba.push(questions[group][myArray[i]]);
-  }
-  return preguntasEscogidasPrueba.slice(0, totalQuestions);
+  return array.slice(0, totalQuestions)
 }
 
-// primera prueba : 
-var cantidadNumeros = 5;
-var myArray = []
-while (myArray.length < cantidadNumeros) {
-  var numeroAleatorio = Math.ceil(Math.random() * cantidadNumeros - 1);
-  var existe = false;
-  for (var i = 0; i < myArray.length; i++) {
-    if (myArray[i] == numeroAleatorio) {
-      existe = true;
-      break;
-    }
-  }
-  if (!existe) {
-    myArray[myArray.length] = numeroAleatorio;
-  }
-
-}
-//console.log(myArray)
-
-// obteniendo array con las preguntas escogidas :
-
-
-// console.log(arrAllQuestions);
 var chosenQuestions = [];
 
 for (var i = 0; i < arrAllQuestions.length; i++) {
-
   for (var y = 0; y < arrAllQuestions[i].length; y++) {
-
     var x = arrAllQuestions[i][y].Question;
     var l = arrAllQuestions[i][y].Time;
     var userQuestions = chosenQuestions.push({
@@ -143,8 +108,9 @@ for (var i = 0; i < arrAllQuestions.length; i++) {
   }
 }
 
-// Vista question: pregunta y tiempo
+console.log(chosenQuestions); // array con las 8 preguntas;
 
+// Vista question: pregunta y tiempo
 var title = document.querySelector('.title-js');
 var counter = document.querySelector('.counter-js');
 var displayQuestion = document.querySelector('.question-js');
