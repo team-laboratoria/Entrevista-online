@@ -30,16 +30,25 @@ header {
 }
 
 .btn-outline-magenta {
-  color: #FF009E;
+  /* color: #FF009E; */
+  color: #000000;
   background-color: transparent;
   background-image: none;
   border-color: #FF009E; 
 }
 
-.btn-outline-magenta:hover {
+/* .btn-outline-magenta:hover {
   color: #fff;
   background-color: #FF009E; 
   border-color: #FF009E; 
+} */
+
+.circle {
+  height: 25vh;
+  width: 12.5vw;
+  border-radius: 9rem;
+  font-size: 6rem;
+  padding-top: 1.6rem;
 }
 
 .vh-100 {

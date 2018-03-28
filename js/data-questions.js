@@ -100,6 +100,7 @@ const questionsSelectedUser = (questionsSelectedGroup) => {
   });
 }
 
+
 // Itera sobre las preguntas
 Object.keys(questions).forEach((key, index) => {
   const group = questions[key];
@@ -115,7 +116,25 @@ var nextQuestion = document.querySelector('.next-question-js');
 
 var centinel = 0;
 
+let number = 20;
+const timer = () => {
+  number =  window.setInterval(function () {
+      $('#timer').html(number);
+    number--;
+    if (number < 0 ){
+      stopTimer()
+    }
+    }, 1000);
+  }
+
+  const stopTimer = () => {
+    clearInterval(timer);
+    // alert('Comienze a contestar las preguntas');
+  }
+
+  timer();
 nextQuestion.addEventListener('click', function () {
+  clearTimeout(number);
   centinel += 1;
   title.textContent = 'Pregunta ' + (centinel + 1);
   counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;

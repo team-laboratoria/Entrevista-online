@@ -8,30 +8,37 @@
   };
   firebase.initializeApp(config);
 
-  var opEmail = false;
-  var opPassword = false;
-  var opname = false;
-  var opsede = true;
+  let opEmail = false;
+  let opPassword = false;
+  let opname = false;
+  let opsede = true;
   
   $('#email1').focus();
   
-  function activeFinalButton() {
+  const activeFinalButton = () => {
     if (opEmail && opPassword && opname && opsede) {
       $('#btnSignUp1').attr('disabled', false);
     } else {
       $('#btnSignUp1').attr('disabled', true);
     }
-  }
+  };
+  // function activeFinalButton() {
+  //   if (opEmail && opPassword && opname && opsede) {
+  //     $('#btnSignUp1').attr('disabled', false);
+  //   } else {
+  //     $('#btnSignUp1').attr('disabled', true);
+  //   }
+  // }
   // realizando acciones cuando el usuario este autenticado
   $('#btnSignUp1').on('click', function(event) {
     event.preventDefault();
-    var emailText = $('#email1').val();
-    var passwordText = $('#password1').val();
+    let emailText = $('#email1').val();
+    let passwordText = $('#password1').val();
     firebase.auth().signInWithEmailAndPassword(emailText, passwordText)
       .catch(function(error) {
     // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      let errorCode = error.code;
+      let errorMessage = error.message;
       if (errorCode === 'auth/wrong-password') {
         alert('Contraseña incorrecta');
         $('#password1').val('');
@@ -45,12 +52,12 @@
     });
   });
   
-  function observer() { 
+  const observer = () => {
     firebase.auth().onAuthStateChanged(function(user) {
       // si el usuario esta activo
       if (user) {
-        var name = $('#name').val();
-        var sede = $('#sede').val();
+        let name = $('#name').val();
+        let sede = $('#sede').val();
         localStorage.setItem('name', name);
         localStorage.setItem('sede', sede);
         window.location.href = 'views/welcome.html';
@@ -58,5 +65,19 @@
         console.log('usuario no logeado');
       }
     });
-  };
+  }
+  // function observer() { 
+  //   firebase.auth().onAuthStateChanged(function(user) {
+  //     // si el usuario esta activo
+  //     if (user) {
+  //       let name = $('#name').val();
+  //       let sede = $('#sede').val();
+  //       localStorage.setItem('name', name);
+  //       localStorage.setItem('sede', sede);
+  //       window.location.href = 'views/welcome.html';
+  //     } else {
+  //       console.log('usuario no logeado');
+  //     }
+  //   });
+  // };
   observer()

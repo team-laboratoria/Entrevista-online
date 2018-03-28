@@ -66,6 +66,25 @@ $(document).ready(function() {
       //     });
       //   }
 
+      
+        // temporizador
+//  let number = 20;
+//  // mostrar los numeros
+//  const timer = () => {
+//   let timer = window.setInterval(function () {
+//     $('#timer').html(number);
+//     number--;
+//     if (number < 0 ){
+//       stopTimer()
+//     }
+//   }, 1000);
+//  }
+//  $('#timer').empty();
+  
+//  const stopTimer = () => {
+//   clearInterval(timer);
+//   // alert('Comienze a contestar las preguntas');
+// }
 
       var widget = uploadcare.Widget('[role=uploadcare-uploader]');
       widget.onUploadComplete(function(info) {
