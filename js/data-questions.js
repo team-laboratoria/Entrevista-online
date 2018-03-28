@@ -111,12 +111,12 @@ Object.keys(questions).forEach((key, index) => {
 var title = document.querySelector('.title-js');
 var counter = document.querySelector('.counter-js');
 var displayQuestion = document.querySelector('.question-js');
-var nextQuestion = document.querySelector('.next-question-js');
+// var nextQuestion = document.querySelector('.next-question-js');
 
 var centinel = 0;
 displayQuestion.textContent = chosenQuestions[centinel].question;
 
-nextQuestion.addEventListener('click', function () {
+function nextQuestion() {
   centinel += 1;
   title.textContent = 'Pregunta ' + (centinel + 1);
   counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
@@ -127,7 +127,10 @@ nextQuestion.addEventListener('click', function () {
       window.location.href = 'finish.html';
     })
   }
-})
+}
+/* nextQuestion.addEventListener('click', function () {
+
+}) */
 var mins = 00,
   segs, s, m;
 
