@@ -7,7 +7,7 @@ header {
 }
 
 .hero {
-  background-image: url('../assets/images/fondo-principal.png');
+  background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -15,6 +15,11 @@ header {
 
 .text-black {
   color: #000000;
+}
+
+.text-hola {
+  color: #FF009E;
+  font-size: 60px;
 }
 
 .bg-yellow {
@@ -134,4 +139,18 @@ header {
   border-right-color: #56F89A;
   border-width: 8px;
   margin-top: -8px;
+}
+
+.chevron-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+}
+
+.chevron-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
 }
