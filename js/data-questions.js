@@ -117,26 +117,29 @@ var nextQuestion = document.querySelector('.next-question-js');
 var centinel = 0;
 displayQuestion.textContent = chosenQuestions[centinel].question;
 
+// cronometro
 let number = 20;
-  // mostrar los numeros
- //  const timer = () => {
-   let timer = window.setInterval(function () {
-     $('#timer').html(number);
-     number--;
-     if (number < 0 ){
-       stopTimer()
-     }
-   }, 1000);
- //  }
- //  $('#timer').empty();
-   
-  const stopTimer = () => {
-   clearInterval(timer);
-   // alert('Comienze a contestar las preguntas');
- }
+
+const timer = () => {
+    let eventTimer =  window.setInterval(function () {
+        $('#timer').html(number);
+        number--;
+        if (number <= 0 ){
+            stopTimer()
+        }
+    }, 1000);
+    const stopTimer = () => {
+        clearInterval(eventTimer);
+    }
+};
+
+timer();
+
 nextQuestion.addEventListener('click', function () {
-  window.clearTimeout(timer());
-  // timer = window.setTimeout(timer());
+ 
+  number = 20;
+  timer();
+
   centinel += 1;
   title.textContent = 'Pregunta ' + (centinel + 1);
   counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;

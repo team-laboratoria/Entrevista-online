@@ -22,13 +22,7 @@
       $('#btnSignUp1').attr('disabled', true);
     }
   };
-  // function activeFinalButton() {
-  //   if (opEmail && opPassword && opname && opsede) {
-  //     $('#btnSignUp1').attr('disabled', false);
-  //   } else {
-  //     $('#btnSignUp1').attr('disabled', true);
-  //   }
-  // }
+ 
   // realizando acciones cuando el usuario este autenticado
   $('#btnSignUp1').on('click', function(event) {
     event.preventDefault();
@@ -66,18 +60,4 @@
       }
     });
   }
-  // function observer() { 
-  //   firebase.auth().onAuthStateChanged(function(user) {
-  //     // si el usuario esta activo
-  //     if (user) {
-  //       let name = $('#name').val();
-  //       let sede = $('#sede').val();
-  //       localStorage.setItem('name', name);
-  //       localStorage.setItem('sede', sede);
-  //       window.location.href = 'views/welcome.html';
-  //     } else {
-  //       console.log('usuario no logeado');
-  //     }
-  //   });
-  // };
   observer()
