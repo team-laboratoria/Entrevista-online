@@ -7,7 +7,7 @@ header {
 }
 
 .hero {
-  background-image: url('../assets/images/fondo-principal.png');
+  background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -15,6 +15,11 @@ header {
 
 .text-black {
   color: #000000;
+}
+
+.text-hola {
+  color: #FF009E;
+  font-size: 60px;
 }
 
 .bg-yellow {
@@ -51,6 +56,18 @@ header {
   padding-top: 1.6rem;
 }
 
+.title-js {
+  font-size: 35px;
+}
+
+.counter-js {
+  font-size: 14px;
+}
+
+.question-js {
+  font-size: 25px;
+}
+
 .vh-100 {
   height: 100vh;
 }
@@ -69,19 +86,18 @@ header {
 
 .hr-small {
   border: none;
-  border-top: 0.2rem solid #FFE521;
+  border-top: 0.3rem solid #FF009E;
   /* border-top: 0.2rem solid #FF009E; */
   width: 4rem;
 }
 
 .progress-bar-container {
   margin: 2em 0 1em;
-  width: 100%;
+  width: 60%;
 }
 
 .progress-counter-container{
   font-size: 0.8em;
-  float: right;
 }
 
 .user-progress-bar {
@@ -116,3 +132,104 @@ header {
   height: 78%;
 }
 
+.span {
+  border-radius: 5px;
+  display: block;
+  font-size: .8em;
+  text-align: center;
+  position: absolute;
+  background: #56F89A;
+  left: 105%;
+  margin-top: -36px;
+  width: 160px;
+  padding: 7px 10px;
+  color: rgb(0, 0, 0);
+}
+
+.span:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-right-color: #56F89A;
+  border-width: 8px;
+  margin-top: -8px;
+}
+
+.chevron-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+}
+
+.chevron-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+}
+
+#btn-fb {
+  height: 100px;
+  width: 130px;
+  margin-top: 10px;
+}
+
+#btn-google {
+  height: 85px;
+  width: 115px;
+  margin-top: 10px;
+}
+
+body .container .progress-bar {
+  background-color: #FF009E;
+}
+
+#logout {
+  padding: 15px;
+  font-size: 20px;
+}
+
+.text-listo {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+}
+
+.text-proceso {
+  color: #000;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.cuadro-dash {
+  border: 1px solid #FF009E;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.list-dash li {
+  font-size: 20px;
+  color: #000;
+}
+
+.list-dash li img {
+  float: right;
+}
+
+.list-1 {
+  list-style-image: url('../assets/images/checked-amarillo.png');
+}
+
+.list-2 {
+  list-style-image: url('../assets/images/checked-verde.png');
+}
+
+.list-3 {
+  list-style-image: url('../assets/images/checked-magenta.png');
+}

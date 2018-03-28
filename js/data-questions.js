@@ -115,6 +115,7 @@ var displayQuestion = document.querySelector('.question-js');
 var nextQuestion = document.querySelector('.next-question-js');
 
 var centinel = 0;
+displayQuestion.textContent = chosenQuestions[centinel].question;
 
 let number = 20;
   // mostrar los numeros
