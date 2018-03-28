@@ -66,7 +66,7 @@ function observer() {
   firebase.auth().onAuthStateChanged(function (user) {
     // si el usuario esta activo
     if (user) {
-      localStorage.setItem('name', $('#name').val());
+      localStorage.setItem('name', $('#name').val()||user.displayName);
       localStorage.setItem('sede', $('#sede').val());
       window.location.href = 'views/welcome.html';
     } else {
@@ -77,30 +77,21 @@ function observer() {
 observer();
 
 $('#btn-google').click(googleLogin);
+$('#btn-fb').click(fbLogin);
 
 function googleLogin() {
   let provider = new firebase.auth.GoogleAuthProvider();
+  if($('#sede').val() != null && $('#sede').val() != 'Sede'){
+
   firebase.auth().signInWithPopup(provider)
-    .then(function (result) {
-      writeData(result)
-    });
+    .then(function (result) {});
+  } else {
+    alert('LLenar campo Sede obligatorio*');
+  }
 }
-
-function writeData(user) {
-  var usuario = {
-    name: user.displayName,
-    email: user.email,
-    foto: user.photoURL
-  };
-  firebase.database().ref('users').child(user.uid)
-    .set(usuario);
-}
-
-$('#btn-fb').click(fbLogin);
 
 function fbLogin() {
   let provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(provider)
     .then(function(result){});
 }
-

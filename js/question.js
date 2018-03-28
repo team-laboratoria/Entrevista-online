@@ -6,7 +6,7 @@
 
 
 $('#change-description').hide();
-$(document).ready(function() {
+$(document).ready(function () {
   var config = {
     apiKey: "AIzaSyBCVgvNV0gko5O9rNFgQv8aXrtZOF2gzeM",
     authDomain: "fir-p-a292a.firebaseapp.com",
@@ -18,7 +18,7 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
 
-  firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // obteniendo datos desde la cuenta de google del usuario
       var email = user.email;
@@ -65,11 +65,16 @@ $(document).ready(function() {
       //       url: urlVideo
       //     });
       //   }
-
+      var $progressBar = $('.user-progress-bar');
+      var $progressBarContainerWidth = $('.progress-bar-container').css('width');
+      var $progressBarPercentage = parseInt($progressBarContainerWidth) / 8;
+      var $counter = $('#counter');
+      var $plusOne = 1;
+      var centinel = 0;
 
       var widget = uploadcare.Widget('[role=uploadcare-uploader]');
-      widget.onUploadComplete(function(info) {
-        var pregunta = 'pregunta';
+      widget.onUploadComplete(function (info) {
+        var pregunta = chosenQuestions[centinel].question;
         var urlVideo = info.cdnUrl + 'nth/0/';
         firebase.database().ref('users').child(user.uid).child('post').push({
           pregunta: pregunta,
@@ -78,20 +83,38 @@ $(document).ready(function() {
         console.log(urlVideo);
         $('#input').val('');
         // localStorage.setItem('url', urlVideo);
+        var $width = $progressBar.css('width');
+        //  console.log($progressBar.css('width'));
+        $currentWidth = parseInt($width);
+        //  console.log($currentWidth);
+        var $newWidth = $currentWidth + $progressBarPercentage;
+        var $newProgress = $progressBar.css('width', $newWidth + 'px');
+        // Incrementando el contador
+        var $actualNumberOfQuestionsAnswered = $counter.text();
+        console.log($actualNumberOfQuestionsAnswered);
+        var $numberOfQuestionsAnswered = parseInt($actualNumberOfQuestionsAnswered);
+        if ($numberOfQuestionsAnswered <= 7) {
+          var $newNumberOfQuestionsAnswered = $numberOfQuestionsAnswered + $plusOne;
+          $counter.text($newNumberOfQuestionsAnswered);
+        }
+        if ($numberOfQuestionsAnswered === 6) {
+          $progressBar.css('width', '99.5%');
+        }
+        return $newProgress
       });
     };
   });
 
   // Funcionalidad cerrar sesión
-  $('#logout').on('click', function(event) {
+  $('#logout').on('click', function (event) {
     event.preventDefault();
-    firebase.auth().signOut().then(function() {
+    firebase.auth().signOut().then(function () {
       // Sign-out successful.
       console.log('Saliste de sesion');
       window.location.href = '../index.html';
-    }).catch(function(error) {
+    }).catch(function (error) {
       // An error happened.
-      console.log(error);      
+      console.log(error);
     });
   });
 });
