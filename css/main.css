@@ -191,3 +191,36 @@ body .container .progress-bar {
   color: rgb(0, 0, 0);
   font-size: 50px;
 }
+
+.text-proceso {
+  color: #000;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.cuadro-dash {
+  border: 1px solid #FF009E;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.list-dash li {
+  font-size: 20px;
+  color: #000;
+}
+
+.list-dash li img {
+  float: right;
+}
+
+.list-1 {
+  list-style-image: url('../assets/images/checked-amarillo.png');
+}
+
+.list-2 {
+  list-style-image: url('../assets/images/checked-verde.png');
+}
+
+.list-3 {
+  list-style-image: url('../assets/images/checked-magenta.png');
+}

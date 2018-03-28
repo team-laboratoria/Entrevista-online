@@ -26,7 +26,7 @@ $(document).ready(function () {
       var sede = localStorage.getItem('sede');
       var name = localStorage.getItem('name');
       // haciendo referencia al espacio exclusivo creado para el usuario en la basedatos
-      var userRef = firebase.database().ref('users').child(userCode);
+      var userRef = firebase.database().ref('users').child(email);
       // guardando datos del usuario en la base datos
       var firebasePostREsf = userRef.child('email');
       firebasePostREsf.set(email);
