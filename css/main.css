@@ -154,3 +154,15 @@ header {
   right: 20px;
   width: 300px;
 }
+
+#btn-fb {
+  height: 100px;
+  width: 130px;
+  margin-top: 10px;
+}
+
+#btn-google {
+  height: 85px;
+  width: 115px;
+  margin-top: 10px;
+}
