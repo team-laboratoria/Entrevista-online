@@ -72,6 +72,10 @@ $(document).ready(function () {
       var $plusOne = 1;
       var centinel = 0;
 
+      nextQuestion.addEventListener('click', function () {
+        centinel += 1;
+      });
+
       var widget = uploadcare.Widget('[role=uploadcare-uploader]');
       widget.onUploadComplete(function (info) {
         var pregunta = chosenQuestions[centinel].question;

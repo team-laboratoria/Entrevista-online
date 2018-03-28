@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 let opEmail = false,
   opPassword = false,
   opname = false,
-  opsede = true;
+  opsede = false;
 
 $('#btnSignUp1').attr('disabled', true);
 $('#btnSignUp').attr('disabled', true);
@@ -24,22 +24,54 @@ function activeFinalButton() {
 }
 
 $('#name').on('input', function (event) {
-  if ($(this).val().length >= 5) opname = true
-  else opname = false
+  if ($(this).val().length >= 7) {
+    opname = true
+    $('.span-userone').hide();
+  }
+  else {
+    opname = false
+    $('.span-userone').show();
+
+  }
+  activeFinalButton();
+});
+
+$('#sede').on('change', function (event) {
+  if($('#sede').val() != null && $('#sede').val() != 'Sede'){
+    opsede = true
+    $('.span-usertwo').hide();
+  }
+  else {
+    opsede = false
+    $('.span-usertwo').show();
+
+  }
   activeFinalButton();
 });
 
 $('#email').on('input', function (event) {
   let regex = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
-  if (regex.test($(this).val())) opEmail = true
-  else opEmail = false
+  if (regex.test($(this).val())) {
+    opEmail = true;
+    $('.span-userthree').hide();
+  }
+  else {
+    opEmail = false
+    $('.span-userthree').show();
+  }
   activeFinalButton();
 });
 
 // validando password
 $('#password').on('input', function (event) {
-  if ($(this).val().length >= 6) opPassword = true
-  else opPassword = false
+  if ($(this).val().length >= 6) {
+    opPassword = true
+    $('.span-userfour').hide();
+  }
+  else {
+    opPassword = false
+    $('.span-userfour').show();
+  }
   activeFinalButton();
 });
 
@@ -82,11 +114,11 @@ $('#btn-fb').click(fbLogin);
 function googleLogin() {
   let provider = new firebase.auth.GoogleAuthProvider();
   if($('#sede').val() != null && $('#sede').val() != 'Sede'){
-
+    $('.span-usertwo').hide();
   firebase.auth().signInWithPopup(provider)
     .then(function (result) {});
   } else {
-    alert('LLenar campo Sede obligatorio*');
+    $('.span-usertwo').show();
   }
 }
 
@@ -95,3 +127,6 @@ function fbLogin() {
   firebase.auth().signInWithPopup(provider)
     .then(function(result){});
 }
+
+
+

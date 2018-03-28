@@ -107,3 +107,31 @@ header {
   height: 78%;
 }
 
+.span {
+  border-radius: 5px;
+  display: block;
+  font-size: .8em;
+  text-align: center;
+  position: absolute;
+  background: #56F89A;
+  left: 105%;
+  margin-top: -36px;
+  width: 160px;
+  padding: 7px 10px;
+  color: rgb(0, 0, 0);
+}
+
+.span:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-right-color: #56F89A;
+  border-width: 8px;
+  margin-top: -8px;
+}
