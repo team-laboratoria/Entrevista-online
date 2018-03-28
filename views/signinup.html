@@ -19,10 +19,10 @@
             <h1 class="principal-title-styles text-center my-3"><img src="../assets/images/logo.png" alt=""></h1>
             <form class="mt-5">
               <div class="form-group">
-                <input id="email1" class="form-control" type="email" placeholder="Correo electrónico">
+                <input id="email1" class="form-control" type="email" placeholder="Correo electrónico" required>
               </div>
               <div class="form-group">
-                <input id="password1" class="form-control" type="password" placeholder="Contraseña">
+                <input id="password1" class="form-control" type="password" placeholder="Contraseña" required>
               </div>
               <a id="btnSignUp1" class="btn text-dark font-weight-bold btn-block bg-green mb-3" href="#" role="button">Entrar</a>
             </form>
@@ -51,7 +51,7 @@
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" id="resetPassword" class="btn bg-green font-weight-bold">Enviar</button>
+              <button type="button" id="resetPassword" class="btn bg-green font-weight-bold" onclick="restPassword()">Enviar</button>
             </div>
           </div>
         </div>
