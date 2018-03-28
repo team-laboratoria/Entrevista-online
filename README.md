@@ -30,6 +30,8 @@ Esta plataforma es creada para ayudar al equipo de Laboratoria y a la training M
 
 ### PROBLEM STATEMENTS
 
+**TRAINING MANAGER**
+
 **{Alejandra}** quisiera poder mejorar el manejo y gestión de cada etapa del proceso de selección para ahorrar tiempo y recursos.
 
 **{Alejandra}** quisiera  poder manejar toda la información del proceso de selección de las postulantes de una manera eficiente y fácil.
@@ -37,6 +39,15 @@ Esta plataforma es creada para ayudar al equipo de Laboratoria y a la training M
 **{Alejandra}** quisiera tener toda la información del proceso de entrevistas de las postulantes.
 
 **{Alejandra}** quisiera poder  visualizar la cantidad de postulantes que son aptas o no  para la etapa de las  entrevistas.
+
+**POSTULANTE**
+
+**{Angélica}** quisiera poder tener más oportunidades laborales.
+
+**{Angélica}** quisiera poder encontrar un trabajo con las condiciones adecuadas.
+
+**{Angélica}** quisiera poder tener más oportunidades educativas y continuar con sus estudios.
+
 
 ### HOW MIGHT WE (HMW)
 
