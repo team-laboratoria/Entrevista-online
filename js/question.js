@@ -77,7 +77,6 @@ $(document).ready(function () {
       var $plusOne = 1;
       var centinel = 0;
 
-      
       var widget = uploadcare.Widget('[role=uploadcare-uploader]');
       widget.onUploadComplete(function (info) {
         var pregunta = chosenQuestions[centinel].question;
