@@ -70,7 +70,7 @@ $(document).ready(function() {
         // temporizador
 //  let number = 20;
 //  // mostrar los numeros
-//  const timer = () => {
+// //  const timer = () => {
 //   let timer = window.setInterval(function () {
 //     $('#timer').html(number);
 //     number--;
@@ -78,8 +78,8 @@ $(document).ready(function() {
 //       stopTimer()
 //     }
 //   }, 1000);
-//  }
-//  $('#timer').empty();
+// //  }
+// //  $('#timer').empty();
   
 //  const stopTimer = () => {
 //   clearInterval(timer);
