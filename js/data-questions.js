@@ -1,6 +1,5 @@
 var questions = {
-  'groupOne': [
-    {
+  'groupOne': [{
       'Question': '¿Sabes si debes pagar a Laboratoria por la formación que recibirías en caso de ser aceptada?',
       'Time': 45
     },
@@ -11,9 +10,9 @@ var questions = {
     {
       'Question': '¿Cuál es tu mayor grado de Educación?',
       'Time': 60
-    }],
-  'groupTwo': [
-    {
+    }
+  ],
+  'groupTwo': [{
       'Question': 'Si estás estudiando o estudiaste alguna carreara en el pasado, cuéntanos qué y por qué lo elegiste. Si no estudias o estuiaste, cuéntanos por qué no.',
       'Time': 60
     },
@@ -32,9 +31,9 @@ var questions = {
     {
       'Question': 'Basada en tu experiencia laboral o de estudios actual o pasada ¿Disfrutas más de las tareas que tienes que desempeñar en equipo o sola? ¿Por qué?',
       'Time': 45
-    }],
-  'groupThree': [
-    {
+    }
+  ],
+  'groupThree': [{
       'Question': '¿Cómo describirías a tu hogar, brevemente',
       'Time': 45
     },
@@ -69,117 +68,52 @@ var questions = {
     {
       'Question': '¿Qué superpoder querrías y por qué?',
       'Time': 60
-    }]
-}
-
-// recorriendo las propiedades del objeto :
-// determinando la longitud de las propiedades : 
-
-var propertiesObjectArray = Object.keys(questions);
-var propertiesObjectLength = Object.keys(questions).length;
-
-
-// obteniendo los indices de las propiedades de los objetos en un array : 
-function getLength() {
-  var arr = [];
-  for (var i = 0; i < propertiesObjectLength; i++) {
-    // devuelve el array de cada propiedad : 
-    arr.push(questions[propertiesObjectArray[i]].length);
-
-  }
-  return arr;
-}
-
-for (var i = 0; i < propertiesObjectLength; i++) {
-  // devuelve el array de cada propiedad : 
-  // console.log(questions[propertiesObjectArray[i]]);
-}
-
-
-
-// Define la cantidad de numeros aleatorios.
-function getQuestions(arrayIndex, totalQuestions, group) {
-  // debugger
-  var cantidadNumeros = arrayIndex;
-  var preguntasEscogidasPrueba = [];
-  var myArray = []
-  while (myArray.length < cantidadNumeros) {
-    var numeroAleatorio = Math.ceil(Math.random() * cantidadNumeros - 1);
-    var existe = false;
-    for (var i = 0; i < myArray.length; i++) {
-      if (myArray[i] == numeroAleatorio) {
-        existe = true;
-        break;
-      }
     }
-    if (!existe) {
-      myArray[myArray.length] = numeroAleatorio;
-    }
-
-  }
-  for (var i = 0; i < myArray.length; i++) {
-    preguntasEscogidasPrueba.push(questions[propertiesObjectArray[group]][myArray[i]]);
-  }
-  return preguntasEscogidasPrueba.slice(0, totalQuestions);
+  ]
 }
 
-// primera prueba : 
-var cantidadNumeros = 5;
-var myArray = []
-while (myArray.length < cantidadNumeros) {
-  var numeroAleatorio = Math.ceil(Math.random() * cantidadNumeros - 1);
-  var existe = false;
-  for (var i = 0; i < myArray.length; i++) {
-    if (myArray[i] == numeroAleatorio) {
-      existe = true;
-      break;
-    }
+const numQuestionsRequired = [3, 2, 3]; // Preguntas requeridas por grupo
+let arrAllQuestions = []; // todas las preguntas seleccionadas por grupo
+let chosenQuestions = []; // Todas las preguntas por alumno
+
+// desordena todas las preguntas
+const shuffle = (array) => {
+  let currentIndex = array.length,
+    temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
-  if (!existe) {
-    myArray[myArray.length] = numeroAleatorio;
-  }
-
+  return array;
 }
-//console.log(myArray)
 
-// obteniendo array con las preguntas escogidas :
-
-// en un for proporcionarará los numeros de los grupos : propertiesObjectLength;
-var questionsRequired = [3, 2, 3];
-var result = [];
-for (var i = 0; i < propertiesObjectArray.length; i++) {
-  var lengthOfProperties = questions[propertiesObjectArray[i]].length;
-  result.push(getQuestions(lengthOfProperties, questionsRequired[i], i));
-}
-// console.log(result);
-var chosenQuestions = [];
-
-for (var i = 0; i < result.length; i++) {
-
-  for (var y = 0; y < result[i].length; y++) {
-
-    var x = result[i][y].Question;
-    var l = result[i][y].Time;
-    var userQuestions = chosenQuestions.push({
-      question: x,
-      time: l
+//Selecciona las preguntas del usuario
+const questionsSelectedUser = (questionsSelectedGroup) => {
+  questionsSelectedGroup.forEach((question) => {
+    chosenQuestions.push({
+      question: question.Question,
+      time: question.Time
     });
-  }
+  });
 }
 
-// Vista question: pregunta y tiempo
+// Itera sobre las preguntas
+Object.keys(questions).forEach((key, index) => {
+  const group = questions[key];
+  let orderRandomQuestions = shuffle(group);
+  let questionsSelectedGroup = orderRandomQuestions.slice(0, numQuestionsRequired[index]); // seleccionar el numero de preguntas requeridas
+  questionsSelectedUser(questionsSelectedGroup)
+});
 
 var title = document.querySelector('.title-js');
 var counter = document.querySelector('.counter-js');
 var displayQuestion = document.querySelector('.question-js');
-
 var nextQuestion = document.querySelector('.next-question-js');
 
 var centinel = 0;
-
-title.textContent = 'Pregunta ' + (centinel + 1);
-counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
-displayQuestion.textContent = chosenQuestions[centinel].question;
 
 nextQuestion.addEventListener('click', function () {
   centinel += 1;
@@ -193,15 +127,16 @@ nextQuestion.addEventListener('click', function () {
     })
   }
 })
-var mins = 00, segs, s, m;
+var mins = 00,
+  segs, s, m;
 
 // Cargar "Tiempo restante" estático en el modal
-$(document).on('click', '.uploadcare--widget__button_type_open',function(event) {
+$(document).on('click', '.uploadcare--widget__button_type_open', function (event) {
   return $('.uploadcare--tab__content').append(`<div>Tiempo restante: <span id="minutos">00:</span><span id ="segundos">00</span></div>`);
 });
 
 // Para "Record a video"
-$(document).on('click', '.uploadcare--camera__button_type_start-record', function(e) {
+$(document).on('click', '.uploadcare--camera__button_type_start-record', function (e) {
   e.preventDefault();
   $('#segundos').empty();
   var time = chosenQuestions[centinel].time;
@@ -210,20 +145,20 @@ $(document).on('click', '.uploadcare--camera__button_type_start-record', functio
   m = setInterval('segundos()', 1000);
 });
 
-  function segundos() {
-    $('#segundos').html(segs);
-    if (segs == 0) {
-      var dm = clearInterval(m);
-      s = setInterval('minutos()', 1000);
-    }
-    segs--;
+function segundos() {
+  $('#segundos').html(segs);
+  if (segs == 0) {
+    var dm = clearInterval(m);
+    s = setInterval('minutos()', 1000);
   }
-  
-  function minutos() {
-    $('#minutos').html(mins);
-    if (mins == 0) {
-      location.reload();
-      var ds = clearInterval(s);
-    }
-    mins--;
+  segs--;
+}
+
+function minutos() {
+  $('#minutos').html(mins);
+  if (mins == 0) {
+    location.reload();
+    var ds = clearInterval(s);
   }
+  mins--;
+}
