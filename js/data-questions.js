@@ -128,14 +128,13 @@ function nextQuestion() {
     })
   }
 }
-/* nextQuestion.addEventListener('click', function () {
 
-}) */
 var mins = 00,
   segs, s, m;
 
-// Cargar "Tiempo restante" estático en el modal
 $(document).on('click', '.uploadcare--widget__button_type_open', function (event) {
+  
+  $('.uploadcare--tab__title').prepend(`<p>${centinel+1}. ${chosenQuestions[centinel].question}</p>`)
   return $('.uploadcare--tab__content').append(`<div>Tiempo restante: <span id="minutos">00:</span><span id ="segundos">00</span></div>`);
 });
 

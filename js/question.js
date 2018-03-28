@@ -76,7 +76,7 @@ $(document).ready(function () {
       var $counter = $('#counter');
       var $plusOne = 1;
       var centinel = 0;
-
+      
       
       var widget = uploadcare.Widget('[role=uploadcare-uploader]');
       widget.onUploadComplete(function (info) {
