@@ -21,8 +21,12 @@ header {
   background-color: #FFE521;
 }
 
+.color-magenta {
+  color: #FF009E;
+}
+
 .bg-magenta {
-  background-color: #FF009E; 
+  background-color: #FF009E;
 }
 
 .bg-green {
@@ -33,13 +37,13 @@ header {
   color: #FF009E;
   background-color: transparent;
   background-image: none;
-  border-color: #FF009E; 
+  border-color: #FF009E;
 }
 
 .btn-outline-magenta:hover {
   color: #fff;
-  background-color: #FF009E; 
-  border-color: #FF009E; 
+  background-color: #FF009E;
+  border-color: #FF009E;
 }
 
 .vh-100 {
@@ -70,7 +74,7 @@ header {
   width: 100%;
 }
 
-.progress-counter-container{
+.progress-counter-container {
   font-size: 0.8em;
   float: right;
 }
@@ -83,14 +87,25 @@ header {
   margin-right: 0.5em;
 }
 
-.uploadcare--widget__button_type_open, .uploadcare--widget__button_type_open:hover, .uploadcare--widget__button_type_open:active, .uploadcare--widget__button_type_open:focus {
+.help-profile {
+  width: 150px;
+}
+
+.uploadcare--widget__button_type_open,
+.uploadcare--widget__button_type_open:hover,
+.uploadcare--widget__button_type_open:active,
+.uploadcare--widget__button_type_open:focus {
   background-color: #FFE521;
-  color: #343a40!important;
+  color: #343a40 !important;
   font-weight: bold;
   border-radius: 4px;
 }
 
-.uploadcare--panel__footer, .uploadcare--preview__back, .uploadcare--camera__button_type_capture, .uploadcare--file__remove, .uploadcare--camera__button_type_cancel-record {
+.uploadcare--panel__footer,
+.uploadcare--preview__back,
+.uploadcare--camera__button_type_capture,
+.uploadcare--file__remove,
+.uploadcare--camera__button_type_cancel-record {
   display: none;
 }
 
@@ -106,4 +121,3 @@ header {
   align-items: center;
   height: 78%;
 }
-
