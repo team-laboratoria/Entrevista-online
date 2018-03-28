@@ -117,27 +117,64 @@ var displayQuestion = document.querySelector('.question-js');
 var centinel = 0;
 displayQuestion.textContent = chosenQuestions[centinel].question;
 
-// cronometro
-let number = 20;
+var _pTiempo = 1;
 
-const timer = () => {
-  let eventTimer = window.setInterval(function () {
-    $('#timer').html(number);
-    number--;
-    if (number <= 0) {
-      stopTimer()
-    }
-  }, 1000);
-  const stopTimer = () => {
-    clearInterval(eventTimer);
-  }
-};
+var valorInicial, time, interv;
 
-timer();
+$(document).ready(function() {
+  startTimer();
+});
+
+iniTimer()
+function iniTimer() {
+    valorInicial = _pTiempo * 20000;
+    time = new Date(valorInicial);
+    displayTime();
+}
+
+function finTimer() {
+  $('.tiempo').html('tiempo terminado');
+}
+
+function startTimer() {
+    time = new Date(valorInicial);
+    interv = setInterval(function() {
+        time = new Date(time - 1000);
+        displayTime();
+        if (time <= 0) {
+            clearInterval(interv);
+            finTimer();
+        }
+    }, 1000);
+    displayTime();
+}
+
+function stopTimer() {
+    clearInterval(interv);
+    time = new Date(valorInicial);
+    displayTime();
+}
+
+function displayTime() {
+    var text_tiempo =
+        fillZeroes(time.getMinutes()) +
+        ":" +
+        fillZeroes(time.getSeconds());
+
+    $('#timer').html(text_tiempo);
+}
+
+function fillZeroes(t) {
+    t = t + "";
+    if (t.length == 1)
+        return "0" + t;
+    else
+        return t;
+}
+
 
 function nextQuestion() {
-  number = 20;
-  timer();
+  startTimer();
   centinel += 1;
   title.textContent = 'Pregunta ' + (centinel + 1);
   counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
@@ -156,8 +193,10 @@ var mins = 00,
   s,
   m;
 
+
+
 $(document).on('click', '.uploadcare--widget__button_type_open', function (event) {
-  
+  stopTimer();
   $('.uploadcare--tab__title').prepend(`<p>${centinel+1}. ${chosenQuestions[centinel].question}</p>`)
   return $('.uploadcare--tab__content').append(`<div>Tiempo restante: <span id="minutos">00:</span><span id ="segundos">00</span></div>`);
 });
@@ -165,6 +204,7 @@ $(document).on('click', '.uploadcare--widget__button_type_open', function (event
 // Para "Record a video"
 $(document).on('click', '.uploadcare--camera__button_type_start-record', function (e) {
   e.preventDefault();
+  
   $('#segundos').empty();
   var time = chosenQuestions[centinel].time;
   $('#segundos').text(time);
