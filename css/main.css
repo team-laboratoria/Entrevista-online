@@ -181,3 +181,13 @@ header {
 body .container .progress-bar {
   background-color: #FF009E;
 }
+
+#logout {
+  padding: 15px;
+  font-size: 20px;
+}
+
+.text-listo {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+}
