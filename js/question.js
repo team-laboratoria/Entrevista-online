@@ -87,6 +87,11 @@ $(document).ready(function () {
         });
         console.log(urlVideo);
         $('#input').val('');
+
+        // video sgt
+        nextQuestion();
+
+
         // localStorage.setItem('url', urlVideo);
         var $width = $progressBar.css('width');
         //  console.log($progressBar.css('width'));
