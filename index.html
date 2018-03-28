@@ -25,6 +25,7 @@
           <form class="mt-5">
             <div class="form-group">
               <input id="name" class="form-control" type="text" placeholder="Nombre y Apellido">
+              <span style="display:none"class="span span-userone">min 7 characters</span>
             </div>
             <div class="form-group">
               <select class="form-control" id="sede">
@@ -35,12 +36,15 @@
                 <option>Lima</option>
                 <option>Santiago de Chile</option>
               </select>
+              <span style="display:none"class="span span-usertwo">Select a sede</span>
             </div>
             <div class="form-group">
               <input id="email" class="form-control" type="email" placeholder="Correo electrónico">
+              <span style="display:none" class="span span-userthree">Enter a email valido</span>
             </div>
             <div class="form-group">
               <input id="password" class="form-control" type="password" placeholder="Contraseña">
+              <span style="display:none" class="span span-userfour">min 6 characters</span>
             </div>
             <button type="button" id="btnSignUp" class="btn text-white font-weight-bold btn-block bg-magenta mb-3">Registrate</button>
             <!-- <p class="text-center"><small>Al registrarte, aceptas nuestras Condiciones y la Política de privacidad.</small></p> -->
@@ -54,8 +58,8 @@
           </div>
         </div>
         <div>
-            <img id="btn-google" class="col-lg-1 offset-lg-5" src="assets/images/icon-google.png" alt="icon-google">
-            <img id="btn-fb" class="col-lg-1" src="assets/images/icon_fb.png" alt="icon-facebook">
+            <img id="btn-google" class="col-lg-1 offset-lg-5 col-2 offset-4" src="assets/images/icon-google.png" alt="icon-google">
+            <img id="btn-fb" class="col-lg-1 col-2" src="assets/images/icon_fb.png" alt="icon-facebook">
         </div>
       </div>
     </div>
