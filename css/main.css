@@ -7,7 +7,7 @@ header {
 }
 
 .hero {
-  background-image: url('../assets/images/fondo-principal.png');
+  background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -15,6 +15,11 @@ header {
 
 .text-black {
   color: #000000;
+}
+
+.text-hola {
+  color: #FF009E;
+  font-size: 60px;
 }
 
 .bg-yellow {
@@ -42,6 +47,18 @@ header {
   border-color: #FF009E; 
 }
 
+.title-js {
+  font-size: 35px;
+}
+
+.counter-js {
+  font-size: 14px;
+}
+
+.question-js {
+  font-size: 25px;
+}
+
 .vh-100 {
   height: 100vh;
 }
@@ -60,19 +77,18 @@ header {
 
 .hr-small {
   border: none;
-  border-top: 0.2rem solid #FFE521;
+  border-top: 0.3rem solid #FF009E;
   /* border-top: 0.2rem solid #FF009E; */
   width: 4rem;
 }
 
 .progress-bar-container {
   margin: 2em 0 1em;
-  width: 100%;
+  width: 60%;
 }
 
 .progress-counter-container{
   font-size: 0.8em;
-  float: right;
 }
 
 .user-progress-bar {
@@ -134,4 +150,44 @@ header {
   border-right-color: #56F89A;
   border-width: 8px;
   margin-top: -8px;
+}
+
+.chevron-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+}
+
+.chevron-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+}
+
+#btn-fb {
+  height: 100px;
+  width: 130px;
+  margin-top: 10px;
+}
+
+#btn-google {
+  height: 85px;
+  width: 115px;
+  margin-top: 10px;
+}
+
+body .container .progress-bar {
+  background-color: #FF009E;
+}
+
+#logout {
+  padding: 15px;
+  font-size: 20px;
+}
+
+.text-listo {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
 }

@@ -109,16 +109,5 @@ $(document).ready(function () {
     };
   });
 
-  // Funcionalidad cerrar sesión
-  $('#logout').on('click', function (event) {
-    event.preventDefault();
-    firebase.auth().signOut().then(function () {
-      // Sign-out successful.
-      console.log('Saliste de sesion');
-      window.location.href = '../index.html';
-    }).catch(function (error) {
-      // An error happened.
-      console.log(error);
-    });
-  });
+  
 });
